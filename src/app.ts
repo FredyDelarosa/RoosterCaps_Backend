@@ -10,6 +10,8 @@ import { inventaryRoutes } from "./inventary/routes/inventaryRoute";
 import { cartRoute } from "./cart/routes/cartRoute";
 import { orderRoute } from "./orders/routes/sizeRoute";
 import { adminRoute } from "./admin/routes/custumerRoutes";
+import https from "https"
+import fs from "fs"
 
 const app = express();
 const signale = new Signale();
@@ -29,9 +31,13 @@ app.use('/api/v1/order',orderRoute);
 app.use('/api/v1/admin',adminRoute);
 
 
-
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/roostercapsapi.integrador.xyz/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/roostercapsapi.integrador.xyz/fullchain.pem')
+  };
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Corriendo en el puerto ${port}`);
 });
+
