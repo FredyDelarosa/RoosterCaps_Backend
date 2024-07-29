@@ -12,11 +12,3 @@ capRouter.get('/categorie/:categoria_id',getCapsByCategorieId);
 capRouter.delete('/:id',deleteCap);
 capRouter.delete('/delete/permant/:id',deleteCapPermant);
 capRouter.get('/all/info/:id',getInfoAllCap);
-
-
-
-
-
-
-
-

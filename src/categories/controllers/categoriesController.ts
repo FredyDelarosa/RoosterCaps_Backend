@@ -16,7 +16,7 @@ export const createCategorie = async (req: Request, res: Response) => {
 
             const { name, descripcion, created_by } = req.body;
             
-            if (!name || !descripcion || !created_by) {
+            if (!name) {
                 return res.status(400).json({ message: 'Missing required fields' });
             }
 
@@ -25,7 +25,7 @@ export const createCategorie = async (req: Request, res: Response) => {
                 base64Image = convertImageToBase64(req.file.buffer);
             }
 
-            const newCategoria = await CategoriaService.createCategorie(name, descripcion, created_by, base64Image);
+            const newCategoria = await CategoriaService.createCategorie(name);
 
             res.status(201).json(newCategoria);
         });
@@ -53,7 +53,7 @@ export const updateCategorie = async (req: Request, res: Response) => {
                 base64Image = convertImageToBase64(req.file.buffer);
             }
 
-            const updatedCategoria = await CategoriaService.updateCategorie(id, name, descripcion, updated_by, base64Image);
+            const updatedCategoria = await CategoriaService.updateCategorie(id, name);
 
             res.status(200).json(updatedCategoria);
         } catch (error: any) {
