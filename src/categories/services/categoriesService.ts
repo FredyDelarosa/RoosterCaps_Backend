@@ -3,20 +3,20 @@ import { CategorieRepository } from "../repository/categoriesRepository";
 
 export class CategoriaService{
 
-    public static async createCategorie(name:string,descripcion:string,created_by:string,image:string){
+    public static async createCategorie(name:string){
         try {
             
-            return await CategorieRepository.createCategorie(name,descripcion,created_by,image);
+            return await CategorieRepository.createCategorie(name);
 
         } catch (error:any) {
             throw new Error(`Error al crear categorie: ${error.message}`);
         }
     }
 
-    public static async updateCategorie(id:string,name:string,descripcion:string,updated_by:string,image:string){
+    public static async updateCategorie(id:string,name:string){
         try {
     
-            return await CategorieRepository.updateCategorie(id,name,descripcion,updated_by,image);
+            return await CategorieRepository.updateCategorie(id,name);
 
         } catch (error:any) {
             throw new Error(`Error al crear categorie: ${error.message}`);
