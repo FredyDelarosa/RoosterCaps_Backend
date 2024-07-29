@@ -36,8 +36,9 @@ const options = {
   cert: fs.readFileSync('/etc/letsencrypt/live/roostercapsapi.integrador.xyz/fullchain.pem')
   };
 
+
 const port = process.env.PORT || 3001;
-app.listen(port, () => {
+https.createServer(options, app).listen(port, () => {
   console.log(`Corriendo en el puerto ${port}`);
 });
 
