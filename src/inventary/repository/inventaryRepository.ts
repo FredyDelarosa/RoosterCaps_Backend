@@ -9,7 +9,6 @@ export class InventaryRepository {
     
             const [result]: any = await query(sql, params);
     
-            // Verifica si el Inventary fue creado exitosamente
             if (!result.insertId) {
                 throw new Error('Failed to create Inventary, no insertId returned');
             }
