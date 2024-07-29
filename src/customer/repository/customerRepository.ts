@@ -4,8 +4,9 @@ import { query } from "../../database/mysql";
 export class CustumerRepository{
     public static async createCustumer(name:string,email:string,password:string,phone_number:string):Promise<Customer | any>{
         try {
-            const sql = 'INSERT INTO Customer (name, email, password, phone_number ,created_by, updated_by) VALUES (?, ?, ?, ?, ?, ?)';
-            const params = [name,email,password,phone_number,name,name];
+            const type_custumer = "2"
+            const sql = 'INSERT INTO Customer (name, email, password, phone_number,created_by, updated_by,customer_type_id) VALUES (?, ?, ?, ?, ?, ?, ?)';
+            const params = [name,email,password,phone_number,name,name,type_custumer];
 
             const [result]:any =await query(sql,params);
 
@@ -24,6 +25,7 @@ export class CustumerRepository{
                 email: email,
                 password: password,
                 phone_number: phone_number,
+                customer_type_id: type_custumer,
                 created_at: new Date().toISOString(),
                 created_by: name,
                 updated_at: new Date().toISOString(),

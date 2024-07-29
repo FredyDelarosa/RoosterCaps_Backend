@@ -65,8 +65,9 @@ export class CustumerService{
             
             const id = custumer.id.toString(); // se convierte en string el id
             const token:string = tokenSigIn(id,email);
+            console.log(custumer.customer_type_id)
             
-            return {token:token,id:custumer.id,name:custumer.name, email:custumer.email, phone_number:custumer.phone_number}
+            return {token:token,id:custumer.id,name:custumer.name, email:custumer.email,  phone_number: custumer.phone_number, type_costumer: custumer.customer_type_id}
             
 
         } catch (error:any) {
