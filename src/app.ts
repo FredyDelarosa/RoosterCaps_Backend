@@ -9,7 +9,7 @@ import { typeCapRoutes } from "./typeCaps/routes/TypeCapRoute";
 import { inventaryRoutes } from "./inventary/routes/inventaryRoute";
 import { cartRoute } from "./cart/routes/cartRoute";
 import { orderRoute } from "./orders/routes/sizeRoute";
-
+import { adminRoute } from "./admin/routes/custumerRoutes";
 
 const app = express();
 const signale = new Signale();
@@ -26,6 +26,8 @@ app.use('/api/v1/typeCap',typeCapRoutes);
 app.use('/api/v1/inventary',inventaryRoutes);
 app.use('/api/v1/cart',cartRoute);
 app.use('/api/v1/order',orderRoute);
+app.use('/api/v1/admin',adminRoute);
+
 
 
 

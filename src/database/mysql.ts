@@ -4,11 +4,11 @@ import { Signale } from "signale";
 const signale = new Signale();
 
 const config = {
-    host: 'localhost',
+    host: 'roostercapsbd.integrador.xyz',
     port: 3306,
-    user: 'root',
-    database: 'API_ROOSTERCAPS',
-    password: '',
+    user: 'Bruno',
+    database: 'DB_RoosterCaps',
+    password: '12345',
     waitForConnections: true,
     connectionLimit: 10,
 };
