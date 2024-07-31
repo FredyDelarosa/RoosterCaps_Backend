@@ -79,7 +79,7 @@ export const loginCustumer  = async(req:Request,res:Response) => {
             return res.status(400).json({ message: 'Missing required fields' });
         }
         const login = await CustumerService.loginCustumer(email,password);
-        res.status(201).json(login);
+        res.status(201).json({login});
     } catch (error:any) {
         res.status(500).json({ error: error.message });
     }

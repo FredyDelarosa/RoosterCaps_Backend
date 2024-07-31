@@ -16,7 +16,7 @@ import fs from "fs"
 const app = express();
 const signale = new Signale();
 
-app.use(cors());
+app.use(cors({origin:"*"}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,15 +30,18 @@ app.use('/api/v1/cart',cartRoute);
 app.use('/api/v1/order',orderRoute);
 app.use('/api/v1/admin',adminRoute);
 
-
+const port = process.env.PORT || 3001;
+/*
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/roostercapsapi.integrador.xyz/privkey.pem'),
   cert: fs.readFileSync('/etc/letsencrypt/live/roostercapsapi.integrador.xyz/fullchain.pem')
   };
 
 
-const port = process.env.PORT || 3001;
 https.createServer(options, app).listen(port, () => {
   console.log(`Corriendo en el puerto ${port}`);
 });
-
+*/
+app.listen(port, () => {
+  console.log(`Corriendo en el puerto ${port}`);
+});

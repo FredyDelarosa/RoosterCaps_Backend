@@ -4,11 +4,11 @@ import { createCaps, updateCaps,getAllCaps,getAllCapsActive,getByIdCap,getCapsBy
 export const capRouter = express.Router();
 
 capRouter.post('/',createCaps);
-capRouter.patch('/:id',updateCaps);
+capRouter.patch('/',updateCaps);
 capRouter.get('/',getAllCaps);
 capRouter.get('/activate/',getAllCapsActive);
 capRouter.get('/:id',getByIdCap);
 capRouter.get('/categorie/:categoria_id',getCapsByCategorieId);
-capRouter.delete('/:id',deleteCap);
+capRouter.delete('/:name',deleteCap);
 capRouter.delete('/delete/permant/:id',deleteCapPermant);
 capRouter.get('/all/info/:id',getInfoAllCap);

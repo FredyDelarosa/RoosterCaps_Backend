@@ -115,6 +115,7 @@ export class CustumerRepository{
             const params = [email];
             const [rows]: any = await query(sql, params);
             // Verifica si se encontró el registro
+            
             if (rows.length === 0) {
                 return null;
             }

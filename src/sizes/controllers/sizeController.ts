@@ -45,8 +45,9 @@ export const getAllSize = async(req:Request,res:Response) => {
     }
 }
 export const getAllSizeActivate = async(req:Request,res:Response) => {
+    const data = req.params
     try {
-        const AllSize = await SizeService.getAllSizeActivate();
+        const AllSize = await SizeService.getAllSizeActivate(data.id);
         res.status(200).json(AllSize);
     } catch (error:any) {
         res.status(500).json({ error: error.message });

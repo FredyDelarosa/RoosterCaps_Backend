@@ -25,9 +25,9 @@ export class SizeService{
             throw new Error(`Error al obtener las tallas: ${error.message}`);
         }
     }
-    public static async getAllSizeActivate(){
+    public static async getAllSizeActivate(id:string){
         try {
-            return await SizeRepository.getAllSizeActive();
+            return await SizeRepository.getAllSizeActive(id);
 
         } catch (error:any) {
             throw new Error(`Error al obtener las tallas: ${error.message}`);

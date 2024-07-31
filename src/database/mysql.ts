@@ -10,7 +10,7 @@ const config = {
     database: 'DB_RoosterCaps',
     password: '12345',
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: 15,
 };
 
 // Crear el pool de conexiones

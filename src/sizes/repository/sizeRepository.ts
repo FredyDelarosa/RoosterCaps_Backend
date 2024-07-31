@@ -69,10 +69,10 @@ export class SizeRepository{
             throw new Error(`Error fetching size: ${error.message}`);
         }
     }
-    public static async getAllSizeActive():Promise<Size[]>{
+    public static async getAllSizeActive(id:string):Promise<Size[]>{
         try {
-            const sql = 'SELECT * FROM Size WHERE deleted = false';
-            const [rows]: any = await query(sql);
+            const sql = 'SELECT * FROM Size WHERE id = ?';
+            const [rows]: any = await query(sql,[id]);
             
             // Verifica si se encontraron registros
             if (!rows.length) {

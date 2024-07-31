@@ -9,9 +9,9 @@ export class InventaryService {
         }
     }
 
-    public static async updateInventary(id: string, cantidad: number, updated_by: string) {
+    public static async updateInventary(name: number, cantidad: number, updated_by: string,talla_id:string) {
         try {
-            return await InventaryRepository.updateInventary(id, cantidad, updated_by);
+            return await InventaryRepository.updateInventary(name, cantidad, updated_by,talla_id);
         } catch (error: any) {
             throw new Error(`Error al modificar inventario: ${error.message}`);
         }
@@ -25,9 +25,9 @@ export class InventaryService {
         }
     }
 
-    public static async getAllInventariesActive() {
+    public static async getAllInventariesActive(id_talla:string, name:string) {
         try {
-            return await InventaryRepository.getAllInventariesActive();
+            return await InventaryRepository.getAllInventariesActive(id_talla,name);
         } catch (error: any) {
             throw new Error(`Error al obtener inventarios activos: ${error.message}`);
         }
@@ -49,9 +49,9 @@ export class InventaryService {
         }
     }
 
-    public static async getAllInventariCaps() {
+    public static async getAllInventariCaps(name:string) {
         try {
-            return await InventaryRepository.getAllInventariCaps();
+            return await InventaryRepository.getAllInventariCaps(name);
         } catch (error: any) {
             throw new Error(`Error al obtener inventarios de gorras: ${error.message}`);
         }

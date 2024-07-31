@@ -8,8 +8,6 @@ custumerRoute.post('/',createCostumer );
 custumerRoute.post('/login',loginCustumer );
 custumerRoute.get('/',getAllCustumer );
 custumerRoute.get('/active/',getAllCustumeractive );
-
-custumerRoute.use(validateToken)
 custumerRoute.patch('/actualizar/:id',updateCustumer );
 custumerRoute.delete('/:id',deleteCustumer );
 

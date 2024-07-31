@@ -4,12 +4,12 @@ import { createInventary, updateInventary, getAllInventaries, deleteInventaryPer
 
 export const inventaryRoutes = express.Router();
 
-inventaryRoutes.use(validateToken);
+//inventaryRoutes.use(validateToken);
 inventaryRoutes.post('/', createInventary);
-inventaryRoutes.patch('/:id', updateInventary);
+inventaryRoutes.put('/:name', updateInventary);
 inventaryRoutes.get('/', getAllInventaries);
-inventaryRoutes.get('/active', getAllInventariesActive);
+inventaryRoutes.get('/:id_talla/:name', getAllInventariesActive);
 inventaryRoutes.delete('/:id', deleteInventary);
 inventaryRoutes.delete('/permanent/:id', deleteInventaryPermanent);
-inventaryRoutes.get('/caps/', getAllInventaryCaps);
+inventaryRoutes.get('/caps/:name', getAllInventaryCaps);
 
